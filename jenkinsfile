@@ -1,11 +1,18 @@
 pipeline {
 	agent any
+	
 	stages {
+		stage('TEST') {
+			steps {
+				publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/srv/jenkinsresult', reportFiles: 'result.html', reportName: 'HTML Report', reportTitles: ''])
+			}
+		}
+	}	
 		stage('DEPLOY') {
 			steps {	
 				sh 'cp index.cgi /srv/pythoncgi/'
 				sh 'chmod 755 /srv/pythoncgi/index.cgi'
+			}
+		}
 	}
-	}
-}
 }
