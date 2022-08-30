@@ -5,4 +5,4 @@ print()                             # blank line, end of headers
 
 print("<TITLE>CGI script output</TITLE>")
 print("<H1>This is my  CGI script</H1>")
-print("Hello, world!")
+print("Hello!")
